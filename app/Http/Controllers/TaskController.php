@@ -26,7 +26,8 @@ class TaskController extends Controller
     public function table()
     {
         $types = sales_representative::get();
-        return view('table', compact('types'));
+        $routs = route::get();
+        return view('table', compact('types','routs'));
     }
 
     //create sales_representative
@@ -75,7 +76,7 @@ class TaskController extends Controller
     }
 
     //update
-    public function changeclient(Request $request)
+    public function changeSalesman(Request $request)
     {
         $rr = sales_representative::where('id', $request->input('id'))->first();
 

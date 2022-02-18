@@ -12,7 +12,7 @@
 */
 
 
-Route::get('/add_route', function () {
+Route::get('/route', function () {
     return view('route');
 });
 
@@ -27,7 +27,7 @@ Route::get('/table','TaskController@table');
 Route::POST('add_available', 'TaskController@addAvailable');
 Route::get('get-clients','TaskController@getclients');
 Route::get('get-client-id/{id}','TaskController@getclientid');
-Route::post('change-client','TaskController@changeclient');
+Route::post('change-client','TaskController@changeSalesman');
 Route::get('client-del/{id}','TaskController@clientdel');
 
 //route

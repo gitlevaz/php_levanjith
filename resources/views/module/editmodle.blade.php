@@ -11,17 +11,7 @@
         
 {!! Form::open(['name' => 'change-client', 'class' => 'change-client']) !!}
 
-<div class="col-sm-12 col-md-12">
-        <div class="form-group">
-        <div class="row">
-            <label class="control-label col-sm-4" for="" style="padding-top: 5px;">id :</label>
-              <div class="col-sm-8">
-                    <input id="ids" type="text" readonly  name="id" value=""  class="form-control" >
-                </div>
-              </div>
-        </div>
-    </div><br><br>
-
+<input id="ids" type="text" readonly hidden name="id" value=""  class="form-control" >
 
     <div class="col-md-12">
       <div class="row">
@@ -75,7 +65,7 @@
                 </div>
               </div>
               <div class="col-md-8">
-                <input id="join_date" class="form-control input-cl" type="text" name="join_date" value="">
+                <input id="join_date" class="form-control input-cl" type="date" name="join_date" value="">
               </div>
              </div>
             </div>
@@ -89,9 +79,9 @@
                   </div>
                 </div>
                 <div class="col-md-8">
-                  <select class="form-control input-cl"  name="divition"  id="divition">
-                    @foreach($types as $type)
-                        <option value="{!! $type->divition !!}">{!! $type->divition !!}</option>
+                  <select class="form-control input-cl"  name="route"  id="route">
+                    @foreach($routs as $type)
+                        <option value="{{$type->id}}">{{$type->name}}</option>
                     @endforeach
                   </select>
                 </div>

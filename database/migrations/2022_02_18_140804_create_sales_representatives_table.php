@@ -18,7 +18,7 @@ class CreateSalesRepresentativesTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('tele_no');
-            $table->string('route');
+            $table->integer('route');
             $table->string('join_date');
             $table->string('comments')->nullable();
             $table->integer('status')->default(1);

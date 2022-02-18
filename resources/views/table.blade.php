@@ -7,8 +7,8 @@
 
 <div class="container">
   <h2>Sales Person List</h2><br><br>
-  <a href="{{url('home')}} "class="addmem btn btn-primary">Add New Member</a>
-  <a href="{{url('add_route')}} "class="addmem btn btn-primary">Add Route</a>
+  <a href="{{url('home')}} "class="addmem btn btn-primary">Add SalesMan</a>
+  <a href="{{url('route')}} "class="addmem btn btn-primary">Add Route</a><br><br>
 
   <table id="view_table"  class="table table-striped table-bordered view_table" style="width: 100%;">
 
@@ -74,9 +74,9 @@ $('.view_table').on('click', '.btn-edit', function(){
 function editodal(data){
   $('#ids').val(data.id)
   $('#name').val(data.name)
-  $('#name').val(data.name)
-  $('#tele_no').val(data.divition)
+  $('#email').val(data.email)
   $('#tele_no').val(data.tele_no)
+  $('#route').val(data.route).change();
   $('#join_date').val(data.join_date)
   $('#comments').val(data.comments)
 }

@@ -21,7 +21,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="from">Routes</label>
-                            <select class="form-control input-cl"  name="divition"  id="divition">
+                            <select class="form-control input-cl"  name="route"  id="route">
                               @foreach($types as $type)
                                   <option value="{!! $type->id !!}">{!! $type->name !!}</option>
                               @endforeach
