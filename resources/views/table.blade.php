@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 @include('module.editmodle')
+@include('module.viewmodle')
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
 
 
@@ -54,12 +55,33 @@ function abcd(id){
   $('#ok').css('display', 'inline')
 }
 
+//view
+$('.view_table').on('click', '.btn-view', function(){
+  var av_id = $(this).data('id')
+  $.ajax({
+    url: '{{url('get-client-id')}}/'+av_id,
+    type: 'GET'
+  })
+  .done(function(data){
+    console.log(data);
+    $('#av_id').val(av_id)  
+    viewmodal(data)
+  })
+})
+
+function viewmodal(data){
+  $('#vids').val(data.id)
+  $('#vname').val(data.name)
+  $('#vemail').val(data.email)
+  $('#vtele_no').val(data.tele_no)
+  $('#vroute').val(data.route).change();
+  $('#vjoin_date').val(data.join_date)
+  $('#vcomments').val(data.comments)
+}
+
 //edit
 $('.view_table').on('click', '.btn-edit', function(){
   var av_id = $(this).data('id')
-//   getDoctor(av_id)
-// })
-// function getDoctor(av_id){
   $.ajax({
     url: '{{url('get-client-id')}}/'+av_id,
     type: 'GET'

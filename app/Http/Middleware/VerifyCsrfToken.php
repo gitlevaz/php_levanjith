@@ -20,6 +20,6 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         'add_available',
-        'add_action_route'
+        'add_action_route',
     ];
 }

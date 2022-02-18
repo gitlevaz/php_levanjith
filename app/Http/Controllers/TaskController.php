@@ -59,9 +59,10 @@ class TaskController extends Controller
         return Datatables::of($rr)
             ->addColumn('action', function ($row) {
 
+                $eidt = '<button class="btn btn-success btn-view" data-toggle="modal" data-target="#viewAvailableModal" data-id="' . $row->id . '">View</button>';
                 $model = '<button class="btn btn-primary btn-edit" data-toggle="modal" data-target="#addAvailableModal" data-id="' . $row->id . '">Edit</button>';
                 $Delete = '<button class="btn btn-danger btn-delete" data-id="' . $row->id . '">Delete</button>';
-                return $model . ' ' . $Delete;
+                return  $eidt. ' ' .$model . ' ' . $Delete;
             })
             ->rawColumns(['action'])
             ->make(true);
